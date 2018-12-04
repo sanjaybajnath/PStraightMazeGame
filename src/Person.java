@@ -5,7 +5,8 @@ public class Person
         int xLoc, yLoc;
 
 
-        public int getxLoc() {
+        public int getxLoc()
+        {
             return xLoc;
         }
 

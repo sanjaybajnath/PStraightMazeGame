@@ -1,7 +1,7 @@
 
 public class Room
 {
-    Person occupant;
+    Person person;
     int xLoc,yLoc;
 
     public Room(int x, int y)
@@ -18,7 +18,7 @@ public class Room
     public void enterRoom(Person x)
     {
         System.out.println("You enter a plain old room");
-        occupant = x;
+        person = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
     }
@@ -29,7 +29,7 @@ public class Room
      */
     public void leaveRoom(Person x)
     {
-        occupant = null;
+        person = null;
     }
 
 }
