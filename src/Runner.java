@@ -4,6 +4,8 @@
 
         private static boolean gameOn = true;
 
+
+
         public static void main(String[] args)
         {
             Room[][] building = new Room[5][5];
@@ -24,7 +26,7 @@
 
             int i=(int)(Math.random()*building.length);
             int z=(int)(Math.random()*building.length);
-            building[i][z]= new Rooms.ParkersRoom(i,z);
+            building[i][z]= new WinningRoom(i,z);
 
             //Setup player 1 and the input scanner
             Person player1 = new Person("FirstName", "FamilyName", 0,0);
@@ -32,15 +34,17 @@
             Scanner in = new Scanner(System.in);
             while(gameOn)
             {
-                System.out.println("Where would you like to move? (Choose N, S, E, W)");
+                System.out.println("Where would you like to move? (Choose W for up, S for down, D for right, or A for left)");
                 String move = in.nextLine();
                 if(validMove(move, player1, building))
                 {
-                    System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+                    System.out.println("Your coordinates: row = " + player1.getXLoc() + " col = " + player1.getYLoc());
+                    
+
 
                 }
                 else {
-                    System.out.println("Please choose a valid move.");
+                    System.out.println("YOU CAN'T DO THAT! Please pick another move.");
                 }
 
 
@@ -58,23 +62,24 @@
         public static boolean validMove(String move, Person p, Room[][] map)
         {
             move = move.toLowerCase().trim();
-            switch (move) {
-                case "n":
-                    if (p.getxLoc() > 0)
+            switch (move)
+            {
+                case "w":
+                    if (p.getXLoc() > 0)
                     {
-                        map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
-                        map[p.getxLoc()-1][p.getyLoc()].enterRoom(p);
+                        map[p.getXLoc()][p.getYLoc()].leaveRoom(p);
+                        map[p.getXLoc()-1][p.getYLoc()].enterRoom(p);
                         return true;
                     }
                     else
                     {
                         return false;
                     }
-                case "e":
-                    if (p.getyLoc()< map[p.getyLoc()].length -1)
+                case "d":
+                    if (p.getYLoc()< map[p.getYLoc()].length -1)
                     {
-                        map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
-                        map[p.getxLoc()][p.getyLoc() + 1].enterRoom(p);
+                        map[p.getXLoc()][p.getYLoc()].leaveRoom(p);
+                        map[p.getXLoc()][p.getYLoc() + 1].enterRoom(p);
                         return true;
                     }
                     else
@@ -83,10 +88,10 @@
                     }
 
                 case "s":
-                    if (p.getxLoc() < map.length - 1)
+                    if (p.getXLoc() < map.length - 1)
                     {
-                        map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
-                        map[p.getxLoc()+1][p.getyLoc()].enterRoom(p);
+                        map[p.getXLoc()][p.getYLoc()].leaveRoom(p);
+                        map[p.getXLoc()+1][p.getYLoc()].enterRoom(p);
                         return true;
                     }
                     else
@@ -94,11 +99,11 @@
                         return false;
                     }
 
-                case "w":
-                    if (p.getyLoc() > 0)
+                case "a":
+                    if (p.getYLoc() > 0)
                     {
-                        map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
-                        map[p.getxLoc()][p.getyLoc()-1].enterRoom(p);
+                        map[p.getXLoc()][p.getYLoc()].leaveRoom(p);
+                        map[p.getXLoc()][p.getYLoc()-1].enterRoom(p);
                         return true;
                     }
                     else
@@ -119,4 +124,4 @@
 
 
     }
-}
+

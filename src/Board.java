@@ -1,10 +1,13 @@
 public class Board
 {
+
     private Room[][]map;
-    public Board(Room[][]map)
+
+    public Board(Room[][]Maze)
     {
-        this.map=map;
+        this.map=Maze;
     }
+
     public void print()
     {
         String row="";
@@ -18,6 +21,11 @@ public class Board
             System.out.println(row);
         }
     }
+
+
+
+
+
 
 
 }

@@ -19,8 +19,8 @@ public class Room
     {
         System.out.println("You enter a plain old room");
         person = x;
-        x.setxLoc(this.xLoc);
-        x.setyLoc(this.yLoc);
+        x.setXLoc(this.xLoc);
+        x.setYLoc(this.yLoc);
     }
 
     /**

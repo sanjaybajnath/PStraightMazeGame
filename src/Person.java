@@ -5,20 +5,20 @@ public class Person
         int xLoc, yLoc;
 
 
-        public int getxLoc()
+        public int getXLoc()
         {
             return xLoc;
         }
 
-        public void setxLoc(int xLoc) {
+        public void setXLoc(int xLoc) {
             this.xLoc = xLoc;
         }
 
-        public int getyLoc() {
+        public int getYLoc() {
             return yLoc;
         }
 
-        public void setyLoc(int yLoc) {
+        public void setYLoc(int yLoc) {
             this.yLoc = yLoc;
         }
 
@@ -32,4 +32,4 @@ public class Person
 
 
     }
-}
+
