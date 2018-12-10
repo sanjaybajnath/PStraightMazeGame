@@ -1,3 +1,7 @@
+    import Rooms.PortalRoom;
+    import Rooms.Room;
+    import Rooms.WinningRoom;
+
     import java.util.Scanner;
     public class Runner {
 

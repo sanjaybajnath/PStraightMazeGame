@@ -1,3 +1,7 @@
+package Maps;
+
+import Rooms.Room;
+
 public class Board
 {
 
@@ -8,7 +12,14 @@ public class Board
         this.map=Maze;
     }
 
-    public void print()
+    public void print(int x,int y)
+    {
+        map=new Room[x][y];
+        for(int i=0; i<map.length; i++)
+        {
+
+        }
+    }
     {
         String row="";
         for(int x=0; x<map.length; x++)

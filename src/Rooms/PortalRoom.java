@@ -1,3 +1,7 @@
+package Rooms;
+
+import Rooms.Room;
+
 public class PortalRoom extends Room
 {
 
