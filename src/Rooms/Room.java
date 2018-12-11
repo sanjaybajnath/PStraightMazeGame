@@ -1,5 +1,7 @@
 package Rooms;
 
+import People.Person;
+
 public class Room
 {
     Person person;
@@ -14,7 +16,7 @@ public class Room
 
     /**
      * Method controls the results when a person enters this room.
-     * @param x the Person entering
+     * @param x the People.Person entering
      */
     public void enterRoom(Person x)
     {

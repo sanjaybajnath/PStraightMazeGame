@@ -1,8 +1,12 @@
 package Rooms;
 
-import Rooms.Room;
+import People.Person;
 
 public class PortalRoom extends Room
+
+    /**
+     *This class will create a random room that transports the player halfway through the maze
+     *It can be a shortcut or a setback, depending on the positions of the room and the person*/
 {
 
     public PortalRoom(int x, int y)

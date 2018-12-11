@@ -3,6 +3,7 @@ package Maps;
 import Rooms.Room;
 
 public class Board
+
 {
 
     private Room[][]map;
@@ -32,6 +33,7 @@ public class Board
             System.out.println(row);
         }
     }
+    //setup half-way through maze to equal position of half the number of rows, half the number of columns
 
 
 

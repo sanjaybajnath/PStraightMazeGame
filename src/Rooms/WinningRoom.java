@@ -1,8 +1,13 @@
 package Rooms;
 
 import Rooms.Room;
+import People.Person;
 
 public class WinningRoom extends Room
+        /**
+         * This room is the last room that will advance to the next level if current level is easy or medium
+         * otherwise,
+         */
 {
     public WinningRoom(int x, int y)
     {

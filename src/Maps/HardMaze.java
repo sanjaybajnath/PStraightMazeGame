@@ -1,4 +1,7 @@
 package Maps;
 
-public class HardMaze {
+public class HardMaze extends Board
+
+{
+
 }

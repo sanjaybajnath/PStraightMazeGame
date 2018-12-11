@@ -1,3 +1,4 @@
+    import People.Person;
     import Rooms.PortalRoom;
     import Rooms.Room;
     import Rooms.WinningRoom;
@@ -33,7 +34,7 @@
             building[i][z]= new WinningRoom(i,z);
 
             //Setup player 1 and the input scanner
-            Person player1 = new Person("FirstName", "FamilyName", 0,0);
+            Person player1 = new Person("beginner", 0, 0);
             building[0][0].enterRoom(player1);
             Scanner in = new Scanner(System.in);
             while(gameOn)
@@ -68,6 +69,7 @@
             move = move.toLowerCase().trim();
             switch (move)
             {
+
                 case "w":
                     if (p.getXLoc() > 0)
                     {
@@ -124,6 +126,7 @@
         {
             gameOn = false;
         }
+        if(WinningRoom=)
 
 
 

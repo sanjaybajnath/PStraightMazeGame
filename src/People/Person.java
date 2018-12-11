@@ -1,8 +1,11 @@
+package People;
+
 public class Person
 {
-        String firstName;
-        String familyName;
+        String level;
         int xLoc, yLoc;
+
+
 
 
         public int getXLoc()
@@ -22,10 +25,9 @@ public class Person
             this.yLoc = yLoc;
         }
 
-        public Person (String firstName, String familyName, int xLoc, int yLoc)
+        public Person (String level, int xLoc, int yLoc)
         {
-            this.firstName = firstName;
-            this.familyName = familyName;
+            this.level = level;
             this.xLoc = xLoc;
             this.yLoc = yLoc;
         }
