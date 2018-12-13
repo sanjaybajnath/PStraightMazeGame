@@ -16,6 +16,7 @@ public class WinningRoom extends Room
 
     }
 
+
     @Override
 
     public void enterRoom(Person x)
@@ -33,5 +34,11 @@ public class WinningRoom extends Room
     {
         person = null;
     }
+
+    @Override
+    public String toString(){
+        return("[W]");
+    }
+
 
 }

@@ -34,5 +34,8 @@ public class Room
     {
         person = null;
     }
+    public String toString(){
+        return("[ ]");
+    }
 
 }

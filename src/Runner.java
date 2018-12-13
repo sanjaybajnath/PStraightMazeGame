@@ -1,7 +1,7 @@
     import People.Person;
-    import Rooms.PortalRoom;
     import Rooms.Room;
     import Rooms.WinningRoom;
+    import Maps.Board;
 
     import java.util.Scanner;
     public class Runner {
@@ -13,35 +13,46 @@
 
         public static void main(String[] args)
         {
-            Room[][] building = new Room[5][5];
+            Room[][] normal = new Room[5][5];
 
             //Fill the building with normal rooms
-            for (int x = 0; x<building.length; x++)
+            for (int x = 0; x<normal.length; x++)
             {
-                for (int y = 0; y < building[x].length; y++)
+                for (int y = 0; y < normal[x].length; y++)
                 {
-                    building[x][y] = new Room(x,y);
+                    normal[x][y] = new Room(x,y);
                 }
             }
 
-            //Create a random PORTAL room.
-            int x = (int)(Math.random()*building.length);
-            int y = (int)(Math.random()*building.length);
-            building[x][y] = new PortalRoom(x, y);
+            
+            //Create a random WINNING room
 
-            int i=(int)(Math.random()*building.length);
-            int z=(int)(Math.random()*building.length);
-            building[i][z]= new WinningRoom(i,z);
 
-            //Setup player 1 and the input scanner
-            Person player1 = new Person("beginner", 0, 0);
-            building[0][0].enterRoom(player1);
+
+
+                int i = (int) (Math.random() * normal.length);
+                int z = (int) (Math.random() * normal.length);
+                normal[i][z] = new WinningRoom(i, z);
+
+
+            //Create a random LOSING room
+
+            int j=(int)(Math.random()*normal.length);
+            int k=(int)(Math.random()*normal.length);
+            normal[j][k]= new WinningRoom(j,k);
+
+
+            Board b = new Board(normal);
+            //Setup beginner player and the input scanner
+            Person player1 = new Person(1, 3, 0,0);
+            normal[0][0].enterRoom(player1);
             Scanner in = new Scanner(System.in);
+            b.print();
             while(gameOn)
             {
                 System.out.println("Where would you like to move? (Choose W for up, S for down, D for right, or A for left)");
                 String move = in.nextLine();
-                if(validMove(move, player1, building))
+                if(validMove(move, player1, normal))
                 {
                     System.out.println("Your coordinates: row = " + player1.getXLoc() + " col = " + player1.getYLoc());
                     
@@ -126,7 +137,7 @@
         {
             gameOn = false;
         }
-        if(WinningRoom=)
+
 
 
 

@@ -6,29 +6,33 @@ public class Board
 
 {
 
-    private Room[][]map;
+    private Room[][]Maze;
 
     public Board(Room[][]Maze)
     {
-        this.map=Maze;
+        this.Maze=Maze;
     }
-
-    public void print(int x,int y)
+    public void fill(Room room)
     {
-        map=new Room[x][y];
-        for(int i=0; i<map.length; i++)
+        for(int x=0; x<Maze.length; x++)
         {
+            for (int y=0; y<Maze.length; y++)
+            {
+                room=this.Maze[x][y];
+            }
 
         }
     }
+
+    public void print()
     {
         String row="";
-        for(int x=0; x<map.length; x++)
+        for(int x=0; x<Maze.length; x++)
         {
             row="";
-            for(int y=0; y<map.length; y++)
+            for(int y=0; y<Maze.length; y++)
             {
-                row=row+map[x][y].toString();
+                row=row+Maze[x][y].toString();
             }
             System.out.println(row);
         }

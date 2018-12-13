@@ -2,8 +2,12 @@ package People;
 
 public class Person
 {
-        String level;
-        int xLoc, yLoc;
+        int level;
+
+        int health;
+
+        int xLoc;
+        int yLoc;
 
 
 
@@ -25,8 +29,9 @@ public class Person
             this.yLoc = yLoc;
         }
 
-        public Person (String level, int xLoc, int yLoc)
+        public Person (int level, int health, int xLoc, int yLoc)
         {
+            this.health=health;
             this.level = level;
             this.xLoc = xLoc;
             this.yLoc = yLoc;
