@@ -17,11 +17,22 @@ public class LosingRoom extends Room
 
     @Override
 
-    public void enterRoom(Person x) {
-        System.out.println("YOU'VE DIED. SO SAD");
-        person = x;
-        x.setXLoc(this.xLoc);
-        x.setYLoc(this.yLoc);
+    public void enterRoom(Person x)
+    {
+        if(x.health == 0) {
+            System.out.println("YOU'VE DIED. SO SAD");
+            person = x;
+            x.setXLoc(this.xLoc);
+            x.setYLoc(this.yLoc);
+
+        }
+        else
+        {
+            System.out.println("NICE TRY! YOU HAVE " + x.health + " LIVES LEFT");
+            person=x;
+            x.setXLoc(0);
+            x.setYLoc(0);
+        }
     }
 
 
@@ -30,6 +41,6 @@ public class LosingRoom extends Room
     }
 
     public String toString() {
-        return ("[P]");
+        return ("[L]");
     }
 }

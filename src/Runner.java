@@ -2,6 +2,7 @@
     import Rooms.Room;
     import Rooms.WinningRoom;
     import Maps.Board;
+    import Rooms.LosingRoom;
 
     import java.util.Scanner;
     public class Runner {
@@ -32,14 +33,32 @@
 
                 int i = (int) (Math.random() * normal.length);
                 int z = (int) (Math.random() * normal.length);
+                while (i==0 && z==0){
+                    i = (int) (Math.random() * normal.length);
+                    z = (int) (Math.random() * normal.length);
+                }
                 normal[i][z] = new WinningRoom(i, z);
 
 
             //Create a random LOSING room
-
+            boolean bad = true;
             int j=(int)(Math.random()*normal.length);
             int k=(int)(Math.random()*normal.length);
-            normal[j][k]= new WinningRoom(j,k);
+            while(bad)
+            {
+                j = (int) (Math.random() * normal.length);
+                k = (int) (Math.random() * normal.length);
+                if (j ==0 && k==0){
+                    bad = true;
+                }
+                else if (j==i && k == z){
+                    bad = true;
+                }
+                else{
+                    bad = false;
+                }
+            }
+            normal[j][k]= new LosingRoom(j,k);
 
 
             Board b = new Board(normal);
@@ -50,6 +69,7 @@
             b.print();
             while(gameOn)
             {
+                System.out.println("FIND A WINNING ROOM");
                 System.out.println("Where would you like to move? (Choose W for up, S for down, D for right, or A for left)");
                 String move = in.nextLine();
                 if(validMove(move, player1, normal))
@@ -137,6 +157,7 @@
         {
             gameOn = false;
         }
+
 
 
 

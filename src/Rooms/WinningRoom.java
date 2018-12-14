@@ -21,11 +21,13 @@ public class WinningRoom extends Room
 
     public void enterRoom(Person x)
     {
+
         System.out.println("YOU'VE FOUND THE WINNING ROOM! NICE JOB!!!!!");
 
         person=x;
         x.setXLoc(this.xLoc);
         x.setYLoc(this.yLoc);
+        x.level += 1;
 
 
 

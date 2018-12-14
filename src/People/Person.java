@@ -2,9 +2,9 @@ package People;
 
 public class Person
 {
-        int level;
+        public int level;
 
-        int health;
+        public int health;
 
         int xLoc;
         int yLoc;
@@ -31,7 +31,7 @@ public class Person
 
         public Person (int level, int health, int xLoc, int yLoc)
         {
-            this.health=health;
+            this.health= health;
             this.level = level;
             this.xLoc = xLoc;
             this.yLoc = yLoc;
