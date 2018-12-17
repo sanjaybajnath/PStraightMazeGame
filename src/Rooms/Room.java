@@ -26,16 +26,27 @@ public class Room
         x.setYLoc(this.yLoc);
     }
 
+
+    public String toString()
+    {
+        if(person==null)
+        {
+            return ("[ ]");
+        }
+        else
+        {
+            return("[0]");
+
+        }
+    }
     /**
      * Removes the player from the room.
      * @param x
      */
+
     public void leaveRoom(Person x)
     {
         person = null;
-    }
-    public String toString(){
-        return("[ ]");
     }
 
 }

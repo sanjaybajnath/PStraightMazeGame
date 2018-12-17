@@ -69,6 +69,8 @@
             b.print();
             while(gameOn)
             {
+                System.out.println("You are in the top left corner");
+                System.out.println("You are represented by the character 'o'");
                 System.out.println("FIND A WINNING ROOM");
                 System.out.println("Where would you like to move? (Choose W for up, S for down, D for right, or A for left)");
                 String move = in.nextLine();
@@ -95,9 +97,10 @@
          * @param map the 2D array of rooms
          * @return
          */
-        public static boolean validMove(String move, Person p, Room[][] map)
+        public static boolean validMove(String move, Person p, Room[][] map, int x)
         {
             move = move.toLowerCase().trim();
+            x=0;
             switch (move)
             {
 
@@ -149,6 +152,7 @@
                     }
                 default:
                     break;
+
 
             }
             return true;
