@@ -74,7 +74,7 @@
                 System.out.println("FIND A WINNING ROOM");
                 System.out.println("Where would you like to move? (Choose W for up, S for down, D for right, or A for left)");
                 String move = in.nextLine();
-                if(validMove(move, player1, normal))
+                if(validMove(move, player1, normal,))
                 {
                     System.out.println("Your coordinates: row = " + player1.getXLoc() + " col = " + player1.getYLoc());
                     
