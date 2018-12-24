@@ -1,6 +1,7 @@
 package Rooms;
 
 import People.Person;
+import Game.Runner;
 
 public class LosingRoom extends Room
 
@@ -8,6 +9,7 @@ public class LosingRoom extends Room
          *This class will create a random room that transports the player halfway through the maze
          *It can be a shortcut or a setback, depending on the positions of the room and the person*/
 {
+
 
     public LosingRoom(int x, int y) {
 
@@ -19,20 +21,9 @@ public class LosingRoom extends Room
 
     public void enterRoom(Person x)
     {
-        if(x.health == 0) {
-            System.out.println("YOU'VE DIED. SO SAD");
-            person = x;
-            x.setXLoc(this.xLoc);
-            x.setYLoc(this.yLoc);
-
-        }
-        else
-        {
-            System.out.println("NICE TRY! YOU HAVE " + x.health + " LIVES LEFT");
-            person=x;
-            x.setXLoc(0);
-            x.setYLoc(0);
-        }
+        System.out.println("You entered the losing room. You were transported to the middle of the board and lost 1 health.");
+        Runner.normal[(Runner.normal.length-1)/2][(Runner.normal[0].length-1)/2].enterRoom(x);
+        x.changeHealth(-1);
     }
 
 

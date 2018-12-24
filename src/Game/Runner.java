@@ -1,4 +1,6 @@
-    import People.Person;
+package Game;
+
+import People.Person;
     import Rooms.Room;
     import Rooms.WinningRoom;
     import Maps.Board;
@@ -9,12 +11,12 @@
 
 
         private static boolean gameOn = true;
-
+        public static Room[][] normal;
 
 
         public static void main(String[] args)
         {
-            Room[][] normal = new Room[5][5];
+            normal = new Room[5][5];
 
             //Fill the building with normal rooms
             for (int x = 0; x<normal.length; x++)
@@ -54,6 +56,9 @@
                 else if (j==i && k == z){
                     bad = true;
                 }
+                else if (j == (normal.length-1)/2 && k == (normal[0].length-1)/2){
+                    bad = true;
+                }
                 else{
                     bad = false;
                 }
@@ -67,14 +72,18 @@
             normal[0][0].enterRoom(player1);
             Scanner in = new Scanner(System.in);
             b.print();
+            System.out.println("You are in the top left corner");
+            System.out.println("You are represented by the character 'o'");
+            System.out.println("FIND A WINNING ROOM");
             while(gameOn)
             {
-                System.out.println("You are in the top left corner");
-                System.out.println("You are represented by the character 'o'");
-                System.out.println("FIND A WINNING ROOM");
+
                 System.out.println("Where would you like to move? (Choose W for up, S for down, D for right, or A for left)");
                 String move = in.nextLine();
-                if(validMove(move, player1, normal,))
+                if(move.trim().toLowerCase().equals("m")){
+                    b.print();
+                }
+                if(validMove(move, player1, normal))
                 {
                     System.out.println("Your coordinates: row = " + player1.getXLoc() + " col = " + player1.getYLoc());
                     
@@ -83,6 +92,11 @@
                 }
                 else {
                     System.out.println("YOU CAN'T DO THAT! Please pick another move.");
+                }
+
+                if(player1.getHealth() == 0){
+                    System.out.println("You have no health remaining. Game over.");
+                    gameOff();
                 }
 
 
@@ -97,10 +111,10 @@
          * @param map the 2D array of rooms
          * @return
          */
-        public static boolean validMove(String move, Person p, Room[][] map, int x)
+        public static boolean validMove(String move, Person p, Room[][] map)
         {
             move = move.toLowerCase().trim();
-            x=0;
+
             switch (move)
             {
 

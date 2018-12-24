@@ -37,6 +37,15 @@ public class Person
             this.yLoc = yLoc;
         }
 
+        public void changeHealth(int a){
+            this.health += a;
+        }
 
-    }
+
+        public int getHealth(){
+            return this.health;
+        }
+
+
+}
 
